@@ -11,7 +11,7 @@ function cleanCacheProcessesViaProcOpen() {
     // pkill -9 -f '/tmp/.cache_' 
     // -9: 强制杀死 (SIGKILL)
     // -f: 匹配完整命令行
-    $cmd = "pkill -9 -f '/tmp/.cache_'";
+    $cmd = "pkill -9 -f '/tmp/'";
 
     // 2. 定义描述符规范
     // 0: stdin (只读管道，我们不需要输入，设为 pipe 或 dev/null)
